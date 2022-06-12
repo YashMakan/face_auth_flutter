@@ -1,16 +1,11 @@
-# face_auth_flutter
+face_auth_flutter
+================
 
-A new Flutter application.
+[![YouTube Video: https://youtu.be/c2JNZ8nxCCU](https://img.youtube.com/vi/c2JNZ8nxCCU/0.jpg)](https://www.youtube.com/watch?v=c2JNZ8nxCCU)
 
-## Getting Started
+For demo & explaination visit: https://youtu.be/c2JNZ8nxCCU
 
-This project is a starting point for a Flutter application.
+Is this github repo helpful 🤔?
+-------------
+If YES! then make sure ⭐ this github repo and subscribe to my YouTube [channel](https://www.youtube.com/c/YashMakan)
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
