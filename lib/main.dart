@@ -1,6 +1,6 @@
 import 'package:camera/camera.dart';
 import 'package:face_auth_flutter/page/face_recognition/camera_page.dart';
-import 'package:face_auth_flutter/page/login_page.dart';
+import 'package:face_auth_flutter/page/detection.dart';
 import 'package:face_auth_flutter/utils/local_db.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -26,6 +26,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) => const MaterialApp(
         debugShowCheckedModeBanner: false,
         title: "Face Auth",
-        home: LoginPage(),
+        home: Detection(),
       );
 }

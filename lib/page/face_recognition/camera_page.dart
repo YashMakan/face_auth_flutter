@@ -49,8 +49,7 @@ class _FaceScanScreenState extends State<FaceScanScreen> {
 
   Future<void> detectFacesFromImage(CameraImage image) async {
     InputImageData _firebaseImageMetadata = InputImageData(
-      imageRotation: rotationIntToImageRotation(
-          _cameraController.description.sensorOrientation),
+      imageRotation: rotationIntToImageRotation(_cameraController.description.sensorOrientation),
       inputImageFormat: InputImageFormat.BGRA8888,
       size: Size(image.width.toDouble(), image.height.toDouble()),
       planeData: image.planes.map(
@@ -78,10 +77,7 @@ class _FaceScanScreenState extends State<FaceScanScreen> {
     await detectFacesFromImage(image);
     if (facesDetected.isNotEmpty) {
       User? user = await _mlService.predict(
-          image,
-          facesDetected[0],
-          widget.user != null,
-          widget.user != null ? widget.user!.name! : controller.text);
+          image, facesDetected[0], widget.user != null, widget.user != null ? widget.user!.name! : controller.text);
       if (widget.user == null) {
         // register case
         Navigator.pop(context);
@@ -92,8 +88,7 @@ class _FaceScanScreenState extends State<FaceScanScreen> {
           Navigator.pop(context);
           print("Unknown User");
         } else {
-          Navigator.push(context,
-              MaterialPageRoute(builder: (context) => const HomePage()));
+          Navigator.push(context, MaterialPageRoute(builder: (context) => const HomePage()));
         }
       }
     }
@@ -108,10 +103,7 @@ class _FaceScanScreenState extends State<FaceScanScreen> {
       file = XFile(file.path);
       _cameraController.setFlashMode(FlashMode.off);
     } else {
-      showDialog(
-          context: context,
-          builder: (context) =>
-              const AlertDialog(content: Text('No face detected!')));
+      showDialog(context: context, builder: (context) => const AlertDialog(content: Text('No face detected!')));
     }
   }
 
@@ -144,9 +136,7 @@ class _FaceScanScreenState extends State<FaceScanScreen> {
             SizedBox(
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height,
-                child: isControllerInitialized
-                    ? CameraPreview(_cameraController)
-                    : null),
+                child: isControllerInitialized ? CameraPreview(_cameraController) : null),
             Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -154,14 +144,12 @@ class _FaceScanScreenState extends State<FaceScanScreen> {
                   Expanded(
                     child: Padding(
                       padding: const EdgeInsets.only(bottom: 100),
-                      child: Lottie.asset("assets/loading.json",
-                          width: MediaQuery.of(context).size.width * 0.7),
+                      child: Lottie.asset("assets/loading.json", width: MediaQuery.of(context).size.width * 0.7),
                     ),
                   ),
                   TextField(
                     controller: controller,
-                    decoration: const InputDecoration(
-                        fillColor: Colors.white, filled: true),
+                    decoration: const InputDecoration(fillColor: Colors.white, filled: true),
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -172,7 +160,7 @@ class _FaceScanScreenState extends State<FaceScanScreen> {
                             text: "Capture",
                             context: context,
                             isClickable: true,
-                            onTap: (){
+                            onTap: () {
                               bool canProcess = false;
                               _cameraController.startImageStream((CameraImage image) async {
                                 if (canProcess) return;
@@ -195,8 +183,7 @@ class _FaceScanScreenState extends State<FaceScanScreen> {
                               flash = !flash;
                             });
                             flash
-                                ? _cameraController
-                                    .setFlashMode(FlashMode.torch)
+                                ? _cameraController.setFlashMode(FlashMode.torch)
                                 : _cameraController.setFlashMode(FlashMode.off);
                           }),
                     ],

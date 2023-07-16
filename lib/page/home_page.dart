@@ -1,4 +1,4 @@
-import 'package:face_auth_flutter/page/login_page.dart';
+import 'package:face_auth_flutter/page/detection.dart';
 import 'package:face_auth_flutter/utils/local_db.dart';
 import 'package:flutter/material.dart';
 
@@ -37,7 +37,7 @@ class HomePage extends StatelessWidget {
           style: TextStyle(fontSize: 20),
         ),
         onPressed: () => Navigator.of(context).pushReplacement(
-          MaterialPageRoute(builder: (context) => const LoginPage()),
+          MaterialPageRoute(builder: (context) => const Detection()),
         ),
       );
 }
